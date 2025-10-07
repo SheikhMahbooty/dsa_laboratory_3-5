@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Works</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: url('/static/images/firelink_shrine.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #000;
+      font-family: 'Cinzel', serif;
+      color: #f5e6c1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-shadow: 0 0 10px rgba(255,200,120,0.3);
+      margin-bottom: 40px;
+    }
+
+    a.github-btn, a.return-btn {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      color: #f5e6c1;
+      font-size: 22px;
+      text-decoration: none;
+      border: 2px solid #bfa76f;
+      padding: 12px 30px;
+      border-radius: 8px;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #bfa76f, 0 0 20px #bfa76f inset;
+      margin: 15px;
+    }
+
+    a.github-btn::before, a.return-btn::before {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ffcc66, #ffd700, #ffcc66, #ffd700);
+      opacity: 0;
+      z-index: -1;
+      filter: blur(10px);
+      transition: opacity 0.3s ease;
+      animation: glow 2s linear infinite;
+    }
+
+    a.github-btn:hover::before, a.return-btn:hover::before {
+      opacity: 1;
+    }
+
+    a.github-btn:hover, a.return-btn:hover {
+      color: #fff;
+      box-shadow: 0 0 20px #ffcc66, 0 0 30px #ffcc66 inset;
+    }
+
+    @keyframes glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    p {
+      margin-top: 20px;
+      color: #f5e6c1;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1>Works – Summoning to GitHub</h1>
+    <a href="https://github.com/SheikhMahbooty" target="_blank" class="github-btn">Go to GitHub</a>
+    <a href="/" class="return-btn">← Return Home</a>
+    <p>Click the glowing button to view my programming works.</p>
+  </div>
+
+</body>
+</html>

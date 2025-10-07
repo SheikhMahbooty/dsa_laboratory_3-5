@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Crimson+Pro:wght@400;600&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: radial-gradient(circle at 50% 20%, #1b1b1b 0%, #0d0d0d 100%);
+      color: #e6e0d4;
+      font-family: 'Crimson Pro', serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      font-size: 2.2em;
+      color: #f0e6d2;
+      text-shadow: 0 0 8px rgba(255, 140, 0, 0.3),
+                   0 0 20px rgba(255, 80, 0, 0.15);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 30px 0;
+    }
+
+    nav a {
+      color: #c7a45d;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: #ffb347;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffb347;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .works-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      margin-top: 30px;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .works-container a {
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+      font-family: 'Cinzel', serif;
+    }
+
+    .works-container a:hover {
+      color: #ffcc80;
+      text-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+    }
+
+    p {
+      color: #bbb;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+
+    .embers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/Rhc4H1n/embers.gif') center center / cover no-repeat;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    .bonfire {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    footer {
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      text-align: center;
+      color: #777;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <div class="embers"></div>
+
+  <h1>Welcome, Ashen One</h1>
+  <p>"May the flames guide thee..."</p>
+
+  <nav>
+    <ul>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/works">Works</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <h1>Programming Works</h1>
+  <p>"Sticking feathers up your butt does not make you a chicken."</p>
+
+<div class="works-container">
+    <a href="{{ url_for('touppercase') }}">toUpperCase</a>
+    <a href="{{ url_for('circle') }}">Area of a Circle</a>
+    <a href="{{ url_for('triangle') }}">Area of a Triangle</a>
+</div>
+
+
+  <img src="{{ url_for('static', filename='images/bonfire.png') }}" alt="Bonfire" class="bonfire">
+
+  <footer>Dark Souls-inspired Flask Website • Created by Hassan Mustafa</footer>
+</body>
+</html>

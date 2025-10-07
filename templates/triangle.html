@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Area of Triangle – Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(20,20,20,0.95);
+      padding: 40px 60px;
+      border-radius: 10px;
+      border: 2px solid #888;
+      box-shadow: 0 0 20px rgba(255, 200, 50, 0.3);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: #f5e6c1;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(255, 200, 50, 0.3);
+    }
+
+    input, button {
+      font-size: 18px;
+      padding: 8px 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #888;
+      background: #222;
+      color: #fff;
+    }
+
+    button:hover {
+      background: #444;
+      cursor: pointer;
+      border-color: #ffb347;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ffb347;
+      font-weight: bold;
+    }
+
+    .return-link {
+      display: block;
+      margin-top: 30px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #888;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .return-link:hover {
+      color: #ffb347;
+      border-color: #ffb347;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Area of Triangle Tool</h1>
+
+    <form method="POST" action="{{ url_for('triangle') }}">
+      <input type="number" step="any" name="base" placeholder="Enter base…" required>
+      <br>
+      <input type="number" step="any" name="height" placeholder="Enter height…" required>
+      <br>
+      <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+      <div class="result">Area: {{ result }}</div>
+    {% endif %}
+
+    <a href="{{ url_for('home') }}" class="return-link">← Return to Home</a>
+  </div>
+
+</body>
+</html>

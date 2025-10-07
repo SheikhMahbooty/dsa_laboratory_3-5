@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: url('/static/images/firelink_shrine.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #000;
+      font-family: 'Cinzel', serif;
+      color: #f5e6c1;
+      overflow: hidden;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 20%;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 200, 120, 0.3);
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.8; }
+    }
+
+    p {
+      font-size: 20px;
+      color: #e0d2a4;
+      text-shadow: 0 0 5px rgba(255, 200, 120, 0.3);
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: #f5e6c1;
+      text-decoration: none;
+      border-bottom: 1px solid #bfa76f;
+      transition: 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #ffcc66;
+      text-shadow: 0 0 6px #ffcc66;
+    }
+
+    .bonfire {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: #c46b23;
+      text-shadow: 0 0 8px #ffb347;
+      animation: bonfire-glow 2s infinite alternate;
+    }
+
+    @keyframes bonfire-glow {
+      from { text-shadow: 0 0 5px #ff6600; }
+      to { text-shadow: 0 0 15px #ffcc66; }
+    }
+
+    .return-link {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: #f5e6c1;
+      text-decoration: none;
+      font-size: 18px;
+      border: 1px solid #bfa76f;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(20, 10, 0, 0.4);
+      transition: 0.3s;
+      z-index: 3;
+    }
+
+    .return-link:hover {
+      background: rgba(255, 200, 120, 0.2);
+      text-shadow: 0 0 8px #ffcc66;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <a href="{{ url_for('home') }}" class="return-link">← Return</a>
+
+  <div class="container">
+    <h1>Contact the Chosen Undead</h1>
+    <p>"Even in the age of fire, a message may yet find its way."</p>
+
+    <div class="contact-info">
+      <p>Email: <a href="mailto:hassanmustafa030107@gmail.com">hassanmustafa030107@gmail.com</a></p>
+      <p>Github: <a href="#https://github.com/SheikhMahbooty" target="_blank">SheikhMahbooty</a></p>
+      <p>Instagram: <a href="https://instagram.com/hassanincorporated" target="_blank">hassanincorporated</a></p>
+      <p>Number: <a href="tel:09178319312">0917 831 9312</a></p>
+    </div>
+  </div>
+
+  <div class="bonfire">🔥 Bonfire Lit</div>
+
+</body>
+</html>

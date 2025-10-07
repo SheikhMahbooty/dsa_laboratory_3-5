@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Souls Profile</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: url('/static/images/character_bg.png') no-repeat center center fixed;
+      background-size: contain;
+      background-color: #000;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .overlay-text, .overlay-img {
+      opacity: 0;
+      animation: fadeInElement 2s ease-in forwards;
+    }
+
+    @keyframes fadeInElement {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .overlay-text {
+      position: absolute;
+      color: #f5e6c1;
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      text-shadow: 0 0 8px rgba(255, 200, 120, 0.3);
+      white-space: nowrap;
+    }
+
+    .name { top: 112px; left: 270px; animation-delay: 0.3s; }
+    .sex { top: 138px; left: 380px; animation-delay: 0.4s; }
+    .class { top: 165px; left: 360px; animation-delay: 0.5s; }
+    .gift { top: 190px; left: 355px; animation-delay: 0.6s; }
+    .physique { top: 216px; left: 384px; animation-delay: 0.7s; }
+    .face { top: 112px; left: 640px; animation-delay: 0.8s; }
+    .hair { top: 138px; left: 665px; animation-delay: 0.9s; }
+    .color { top: 168px; left: 615px; font-size: 15px; animation-delay: 1s; }
+
+    .stats {
+      top: 265px;
+      left: 430px;
+      font-size: 21px;
+      color: #f5e6c1; 
+      line-height: 1.2; 
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      position: absolute;
+      animation-delay: 1.1s;
+    }
+
+    .overlay-img {
+      position: absolute;
+      opacity: 0.9;
+      z-index: 10;
+      animation-delay: 1.3s;
+    }
+
+    .one { top: 280px; left: 520px; width: 100px; animation-delay: 1.4s; }
+    .two { top: 280px; left: 610px; width: 100px; animation-delay: 1.5s; }
+    .three { top: 300px; left: 700px; width: 100px; animation-delay: 1.6s; }
+    .four { top: 360px; left: 520px; width: 100px; animation-delay: 1.7s; }
+    .five { top: 389px; left: 630px; width: 60px; animation-delay: 1.8s; }
+    .six { top: 150px; left: 855px; width: 300px; animation-delay: 1.9s; }
+
+    .return-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      text-decoration: none;
+      color: #f5e6c1;
+      padding: 10px 20px;
+      border: 2px solid #bfa76f;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.5);
+      box-shadow: 0 0 10px #bfa76f, 0 0 20px #bfa76f inset;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+
+    .return-btn:hover {
+      color: #fff;
+      box-shadow: 0 0 20px #ffcc66, 0 0 30px #ffcc66 inset;
+      text-shadow: 0 0 10px #ffcc66;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay-text name">Hassan Mustafa</div>
+  <div class="overlay-text sex">Male</div>
+  <div class="overlay-text class">BSCPE 2-2</div>
+  <div class="overlay-text gift">Beep Card</div>
+  <div class="overlay-text physique">Fair</div>
+  <div class="overlay-text face">Handsome</div>
+  <div class="overlay-text hair">Curly</div>
+  <div class="overlay-text color">Surprisingly Bright</div>
+  <div class="overlay-text info-text stats">
+    <div>1</div>
+    <div>8</div>
+    <div>1</div>
+    <div>9</div>
+    <div>12</div>
+    <div>5</div>
+    <div>6</div>
+    <div>0</div>
+    <div>1</div>
+  </div>
+
+  <img src="/static/images/shirt.png" alt="Overlay 1" class="overlay-img one">
+  <img src="/static/images/jacket.png" alt="Overlay 2" class="overlay-img two">
+  <img src="/static/images/soap.png" alt="Overlay 3" class="overlay-img three">
+  <img src="/static/images/shades.png" alt="Overlay 4" class="overlay-img four">
+  <img src="/static/images/pants.png" alt="Overlay 5" class="overlay-img five">
+  <img src="/static/images/me.jpg" alt="Overlay 6" class="overlay-img six">
+
+  <a href="/" class="return-btn">← Return to Home</a>
+
+</body>
+</html>
