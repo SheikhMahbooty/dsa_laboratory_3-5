@@ -43,7 +43,8 @@
       margin-bottom: 40px;
     }
 
-    a.github-btn, a.return-btn {
+    /* Glowing button style (shared for all) */
+    a.glow-btn {
       display: inline-block;
       font-family: 'Cinzel', serif;
       color: #f5e6c1;
@@ -58,7 +59,7 @@
       margin: 15px;
     }
 
-    a.github-btn::before, a.return-btn::before {
+    a.glow-btn::before {
       content: '';
       position: absolute;
       top: -5px; left: -5px; right: -5px; bottom: -5px;
@@ -71,13 +72,14 @@
       animation: glow 2s linear infinite;
     }
 
-    a.github-btn:hover::before, a.return-btn:hover::before {
+    a.glow-btn:hover::before {
       opacity: 1;
     }
 
-    a.github-btn:hover, a.return-btn:hover {
+    a.glow-btn:hover {
       color: #fff;
       box-shadow: 0 0 20px #ffcc66, 0 0 30px #ffcc66 inset;
+      transform: scale(1.05);
     }
 
     @keyframes glow {
@@ -99,9 +101,12 @@
 
   <div class="container">
     <h1>Works – Summoning to GitHub</h1>
-    <a href="https://github.com/SheikhMahbooty" target="_blank" class="github-btn">Go to GitHub</a>
-    <a href="/" class="return-btn">← Return Home</a>
-    <p>Click the glowing button to view my programming works.</p>
+
+    <a href="https://github.com/SheikhMahbooty" target="_blank" class="glow-btn">Go to GitHub</a>
+    <a href="{{ url_for('infix_to_postfix_page') }}" class="glow-btn">Infix to Postfix Converter</a>
+    <a href="/" class="glow-btn">← Return Home</a>
+
+    <p>Click a glowing button to explore my works.</p>
   </div>
 
 </body>
